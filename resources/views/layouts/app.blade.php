@@ -104,12 +104,8 @@
             </div>
         </main>
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
-            <ul class="nav col-md-4 justify-content-start list-unstyled d-flex">
-                @livewire('layout.footer-left')
-            </ul>
-            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                @livewire('layout.footer-right')
-            </ul>
+            @livewire('layout.footer-left')
+            @livewire('layout.footer-right')
         </footer>
     </div>
     @livewireScripts
