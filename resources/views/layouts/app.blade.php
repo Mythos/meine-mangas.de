@@ -97,9 +97,7 @@
             <div class="container">
                 @hasSection('breadcrumbs')
                     <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            @yield('breadcrumbs')
-                        </ol>
+                        @yield('breadcrumbs')
                     </nav>
                 @endif
                 @yield('content')

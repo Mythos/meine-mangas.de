@@ -3,9 +3,11 @@
 @endsection
 
 @section('breadcrumbs')
-    <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
-    <li class="breadcrumb-item">{{ __('Administration') }}</a></li>
-    <li class="breadcrumb-item active">{{ __('Pages') }}</li>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
+        <li class="breadcrumb-item">{{ __('Administration') }}</a></li>
+        <li class="breadcrumb-item active">{{ __('Pages') }}</li>
+    </ol>
 @endsection
 
 @section('content')

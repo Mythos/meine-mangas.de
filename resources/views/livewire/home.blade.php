@@ -3,7 +3,9 @@
 @endsection
 
 @section('breadcrumbs')
-    <li class="breadcrumb-item active">{{ __('Home') }}</li>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active">{{ __('Home') }}</li>
+    </ol>
 @endsection
 
 @section('content')
