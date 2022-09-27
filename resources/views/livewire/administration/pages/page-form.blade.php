@@ -8,7 +8,7 @@
                 <div class="row mt-1">
                     <div class="col-md-12">
                         <label for="page.title" class="col-form-label required">{{ __('Title') }}</label>
-                        <input id="page.title" name="page.title" type="text" class="form-control @error('page.title') is-invalid @enderror" wire:model='page.title' autofocus>
+                        <input id="page.title" name="page.title" type="text" class="form-control @error('page.title') is-invalid @enderror" wire:model.debounce.500ms='page.title' autofocus>
                         @error('page.title')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -19,7 +19,7 @@
                 <div class="row mt-1">
                     <div class="col-md-12">
                         <label for="page.content" class="col-form-label">{{ __('Content') }}</label>
-                        <textarea id="page.content" name="page.content" type="text" class="form-control @error('page.content') is-invalid @enderror" wire:model='page.content' rows="20">
+                        <textarea id="page.content" name="page.content" type="text" class="form-control @error('page.content') is-invalid @enderror" wire:model.debounce.500ms='page.content' rows="20">
                         </textarea>
                         @error('page.content')
                             <span class="invalid-feedback" role="alert">
@@ -31,7 +31,7 @@
                 <div class="row mt-1">
                     <div class="col-md-12">
                         <label for="page.position" class="col-form-label">{{ __('Position') }}</label>
-                        <select id="page.position" name="page.position" class="form-select @error('page.position') is-invalid @enderror" wire:model='page.position'>
+                        <select id="page.position" name="page.position" class="form-select @error('page.position') is-invalid @enderror" wire:model.debounce.500ms='page.position'>
                             <option value="{{ App\Enums\PagePosition::NONE->value }}">{{ __('None') }}</option>
                             <option value="{{ App\Enums\PagePosition::FOOTER_LEFT->value }}">{{ __('Footer (left)') }}</option>
                             <option value="{{ App\Enums\PagePosition::FOOTER_RIGHT->value }}">{{ __('Footer (right)') }}</option>

@@ -19,7 +19,7 @@
                 <div class="row mt-1">
                     <div class="col-md-12">
                         <label for="current_password" class="col-form-label required">{{ __('Current Password') }}</label>
-                        <input id="current_password" name="current_password" type="password" class="form-control @error('current_password') is-invalid @enderror" wire:model='current_password' autofocus>
+                        <input id="current_password" name="current_password" type="password" class="form-control @error('current_password') is-invalid @enderror" wire:model.debounce.500ms='current_password' autofocus>
                         @error('current_password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
