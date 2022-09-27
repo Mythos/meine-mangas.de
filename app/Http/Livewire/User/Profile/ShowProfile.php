@@ -34,6 +34,6 @@ class ShowProfile extends BaseComponent
 
     public function render()
     {
-        return view('livewire.user.profile.show-profile')->extends('layouts.app')->section('content');
+        return view('livewire.user.profile.show-profile');
     }
 }

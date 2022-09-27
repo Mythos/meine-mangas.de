@@ -22,7 +22,7 @@ class ChangePassword extends BaseComponent
 
     public function render()
     {
-        return view('livewire.user.profile.change-password')->extends('layouts.app')->section('content');
+        return view('livewire.user.profile.change-password');
     }
 
     public function save()

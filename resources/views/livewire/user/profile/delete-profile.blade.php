@@ -1,13 +1,13 @@
-@section('title')
+@slot('title')
     {{ __('Profile') }}
-@endsection
+@endslot
 
-@section('breadcrumbs')
+@slot('breadcrumbs')
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
         <li class="breadcrumb-item active">{{ __('Profile') }}</li>
     </ol>
-@endsection
+@endslot
 
 <form method="POST" wire:submit.prevent='save'>
     <div class="row bg-white shadow-sm rounded">

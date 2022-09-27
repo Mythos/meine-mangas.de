@@ -26,7 +26,7 @@ class PagesTable extends BaseComponent
         $this->footerLeft = Page::wherePosition(PagePosition::FOOTER_LEFT)->orderBy('order')->get();
         $this->footerRight = Page::wherePosition(PagePosition::FOOTER_RIGHT)->orderBy('order')->get();
 
-        return view('livewire.administration.pages.pages-table')->extends('layouts.app');
+        return view('livewire.administration.pages.pages-table');
     }
 
     public function move_up(int $id): void

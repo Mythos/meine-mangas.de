@@ -15,7 +15,7 @@ class DeleteProfile extends BaseComponent
 
     public function render()
     {
-        return view('livewire.user.profile.delete-profile')->extends('layouts.app')->section('content');
+        return view('livewire.user.profile.delete-profile');
     }
 
     public function save()

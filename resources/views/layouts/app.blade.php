@@ -8,15 +8,15 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    @hasSection('title')
+    @isset($title)
         <title>
-            @yield('title') - {{ config('app.name', 'Laravel') }}
+            {{ $title }} - {{ config('app.name', 'Laravel') }}
         </title>
     @else
         <title>
             {{ config('app.name', 'Laravel') }}
         </title>
-    @endif
+    @endisset
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
@@ -99,12 +99,13 @@
         </nav>
         <main class="pb-4" style="padding-top: 70px; background-color: #F0F0F0; min-height: 90vh;">
             <div class="container">
+                {{ $breadcrumbs ?? '' }}
                 @hasSection('breadcrumbs')
                     <nav aria-label="breadcrumb">
                         @yield('breadcrumbs')
                     </nav>
                 @endif
-                @yield('content')
+                {{ $slot ?? '' }}
             </div>
         </main>
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">

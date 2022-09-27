@@ -1,14 +1,14 @@
-@section('title')
+@slot('title')
     {{ $page->title }}
-@endsection
+@endslot
 
-@section('breadcrumbs')
+@slot('breadcrumbs')
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
         <li class="breadcrumb-item">{{ __('Administration') }}</a></li>
         <li class="breadcrumb-item active"><a href="{{ route('pages.index') }}">{{ __('Pages') }}</a></li>
         <li class="breadcrumb-item active" aria-current="page">{{ $page->title }}</li>
     </ol>
-@endsection
+@endslot
 
-@include('livewire.administration.pages.page-form', ['title' => __('Edit Page')])
+@include('livewire.administration.pages.partials.page-form', ['title' => __('Edit Page')])

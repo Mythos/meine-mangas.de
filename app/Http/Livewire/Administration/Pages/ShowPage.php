@@ -16,6 +16,6 @@ class ShowPage extends BaseComponent
 
     public function render()
     {
-        return view('livewire.administration.pages.show-page')->extends('layouts.app');
+        return view('livewire.administration.pages.show-page');
     }
 }

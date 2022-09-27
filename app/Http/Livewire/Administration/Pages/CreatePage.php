@@ -18,6 +18,6 @@ class CreatePage extends PageBase
 
     public function render()
     {
-        return view('livewire.administration.pages.create-page')->extends('layouts.app');
+        return view('livewire.administration.pages.create-page');
     }
 }

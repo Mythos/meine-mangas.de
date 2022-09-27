@@ -1,14 +1,14 @@
-@section('title')
+@slot('title')
     {{ __('Pages') }}
-@endsection
+@endslot
 
-@section('breadcrumbs')
+@slot('breadcrumbs')
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
         <li class="breadcrumb-item">{{ __('Administration') }}</a></li>
         <li class="breadcrumb-item active">{{ __('Pages') }}</li>
     </ol>
-@endsection
+@endslot
 
 <div class="row bg-white shadow-sm rounded p-3">
     <div>
@@ -21,14 +21,14 @@
     </div>
     <div class="mt-2">
         <h3>{{ __('None') }}</h3>
-        @include('livewire.administration.pages.page-table', ['pages' => $none])
+        @include('livewire.administration.pages.partials.page-table', ['pages' => $none])
     </div>
     <div class="mt-2">
         <h3>{{ __('Footer (left)') }}</h3>
-        @include('livewire.administration.pages.page-table', ['pages' => $footerLeft])
+        @include('livewire.administration.pages.partials.page-table', ['pages' => $footerLeft])
     </div>
     <div class="mt-2">
         <h3>{{ __('Footer (right)') }}</h3>
-        @include('livewire.administration.pages.page-table', ['pages' => $footerRight])
+        @include('livewire.administration.pages.partials.page-table', ['pages' => $footerRight])
     </div>
 </div>
