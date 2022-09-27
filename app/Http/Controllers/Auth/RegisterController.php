@@ -69,7 +69,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'language' => config('app.locale'),
+            'language' => session('app.locale', config('app.locale')),
             'date_format' => config('app.date_format'),
         ]);
         $user->assignRole('User');
