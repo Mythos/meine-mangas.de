@@ -17,9 +17,8 @@ class Language
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!empty(auth()?->user()?->language)) {
-            App::setLocale(auth()->user()->language);
-        }
+        $locale = session('app.locale') ?? auth()?->user()?->language ?? config('app.locale');
+        App::setLocale($locale);
 
         return $next($request);
     }

@@ -112,10 +112,24 @@
                 @endif
             </div>
         </main>
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
-            @livewire('layout.footer-left')
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3">
+            <div class="col-md-6 d-flex align-items-center ps-2">
+                @livewire('language-switcher')
+                @livewire('layout.footer-left')
+            </div>
             @livewire('layout.footer-right')
         </footer>
+        {{-- <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
+            <div class="row">
+                <div class="pull-start">
+                    @livewire('language-switcher')
+                    @livewire('layout.footer-left')
+                </div>
+                <div class="pull-end">
+                    @livewire('layout.footer-right')
+                </div>
+            </div>
+        </footer> --}}
     </div>
     @livewireScripts
     <x-livewire-alert::scripts />
