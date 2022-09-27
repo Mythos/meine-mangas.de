@@ -8,7 +8,5 @@
     </ol>
 @endsection
 
-@section('content')
-    <div class="row mb-3">
-    </div>
-@endsection
+<div class="row mb-3">
+</div>

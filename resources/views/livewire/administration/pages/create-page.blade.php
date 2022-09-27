@@ -11,6 +11,4 @@
     </ol>
 @endsection
 
-@section('content')
-    @include('livewire.administration.pages.page-form', ['title' => __('Create Page')])
-@endsection
+@include('livewire.administration.pages.page-form', ['title' => __('Create Page')])

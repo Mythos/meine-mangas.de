@@ -9,6 +9,4 @@
     </ol>
 @endsection
 
-@section('content')
-    {!! $page->content !!}
-@endsection
+{!! $page->content !!}

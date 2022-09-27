@@ -11,6 +11,4 @@
     </ol>
 @endsection
 
-@section('content')
-    @include('livewire.administration.pages.page-form', ['title' => __('Edit Page')])
-@endsection
+@include('livewire.administration.pages.page-form', ['title' => __('Edit Page')])
