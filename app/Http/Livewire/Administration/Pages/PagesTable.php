@@ -2,17 +2,23 @@
 
 namespace App\Http\Livewire\Administration\Pages;
 
+use App\Constants\Permissions;
 use App\Enums\PagePosition;
+use App\Http\Livewire\BaseComponent;
 use App\Models\Page;
-use Livewire\Component;
 
-class PagesTable extends Component
+class PagesTable extends BaseComponent
 {
     public $none;
 
     public $footerLeft;
 
     public $footerRight;
+
+    public function mount(): void
+    {
+        $this->authorize(Permissions::PAGES_EDIT);
+    }
 
     public function render()
     {

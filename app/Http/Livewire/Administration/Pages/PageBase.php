@@ -2,13 +2,14 @@
 
 namespace App\Http\Livewire\Administration\Pages;
 
+use App\Constants\Permissions;
+use App\Http\Livewire\BaseComponent;
 use App\Models\Page;
 use Exception;
 use Illuminate\Support\Facades\Log;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
-use Livewire\Component;
 
-class PageBase extends Component
+class PageBase extends BaseComponent
 {
     use LivewireAlert;
 
@@ -32,6 +33,7 @@ class PageBase extends Component
 
     public function save()
     {
+        $this->authorize(Permissions::PAGES_EDIT);
         $this->validate();
         try {
             if ($this->page->position != $this->page->getOriginal('position')) {
@@ -47,6 +49,7 @@ class PageBase extends Component
 
     public function delete(): void
     {
+        $this->authorize(Permissions::PAGES_DELETE);
         if ($this->page->id == 0) {
             return;
         }
@@ -59,6 +62,7 @@ class PageBase extends Component
 
     public function confirmedDelete(): void
     {
+        $this->authorize(Permissions::PAGES_DELETE);
         if ($this->page->id == 0) {
             return;
         }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Livewire\Administration\Pages;
 
+use App\Http\Livewire\BaseComponent;
 use App\Models\Page;
-use Livewire\Component;
 
-class ShowPage extends Component
+class ShowPage extends BaseComponent
 {
     public Page $page;
 

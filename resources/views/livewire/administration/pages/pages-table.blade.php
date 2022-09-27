@@ -13,9 +13,11 @@
 <div class="row bg-white shadow-sm rounded p-3">
     <div>
         <h2 style="display: inline;">{{ __('Pages') }}</h2>
-        <div class="float-end">
-            <a href="{{ route('pages.create') }}" class="btn btn-link"><span class="fas fa-plus-circle"></span></a>
-        </div>
+        @can(\App\Constants\Permissions::PAGES_EDIT)
+            <div class="float-end">
+                <a href="{{ route('pages.create') }}" class="btn btn-link"><span class="fas fa-plus-circle"></span></a>
+            </div>
+        @endcan
     </div>
     <div class="mt-2">
         <h3>{{ __('None') }}</h3>

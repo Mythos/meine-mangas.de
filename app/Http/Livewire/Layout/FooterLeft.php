@@ -3,10 +3,10 @@
 namespace App\Http\Livewire\Layout;
 
 use App\Enums\PagePosition;
+use App\Http\Livewire\BaseComponent;
 use App\Models\Page;
-use Livewire\Component;
 
-class FooterLeft extends Component
+class FooterLeft extends BaseComponent
 {
     public function render()
     {

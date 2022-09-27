@@ -44,14 +44,18 @@
                     </div>
                 </div>
                 <div class="mt-3">
-                    @if ($page->id > 0)
-                        <div class="float-start mb-3">
-                            <button type="button" class="btn btn-danger" wire:click='delete'>{{ __('Delete') }}</button>
+                    @can(\App\Constants\Permissions::PAGES_DELETE)
+                        @if ($page->id > 0)
+                            <div class="float-start mb-3">
+                                <button type="button" class="btn btn-danger" wire:click='delete'>{{ __('Delete') }}</button>
+                            </div>
+                        @endif
+                    @endcan
+                    @can(\App\Constants\Permissions::PAGES_EDIT)
+                        <div class="float-end mb-3">
+                            <button class="btn btn-primary" type="submit">{{ __('Save') }}</button>
                         </div>
-                    @endif
-                    <div class="float-end mb-3">
-                        <button class="btn btn-primary" type="submit">{{ __('Save') }}</button>
-                    </div>
+                    @endcan
                 </div>
             </form>
         </div>

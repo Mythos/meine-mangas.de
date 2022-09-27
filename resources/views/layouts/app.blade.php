@@ -39,18 +39,22 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         @auth
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ __('Administration') }}
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end">
-                                    <li>
-                                        <a class="dropdown-item" href="{{ route('pages.index') }}">
-                                            {{ __('Pages') }}
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
+                            @role('Administrator')
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ __('Administration') }}
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        @can(\App\Constants\Permissions::PAGES_EDIT)
+                                            <li>
+                                                <a class="dropdown-item" href="{{ route('pages.index') }}">
+                                                    {{ __('Pages') }}
+                                                </a>
+                                            </li>
+                                        @endcan
+                                    </ul>
+                                </li>
+                            @endrole
                         @endauth
                     </ul>
 
