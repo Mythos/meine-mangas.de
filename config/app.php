@@ -1,5 +1,8 @@
 <?php
 
+use App\Constants\Permissions;
+use App\Enums\PagePosition;
+use App\Enums\SecondaryTitlePreference;
 use Illuminate\Support\Facades\Facade;
 
 return [
@@ -221,7 +224,9 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => App\Example\ExampleClass::class,
+        'PagePosition' => PagePosition::class,
+        'SecondaryTitlePreference' => SecondaryTitlePreference::class,
+        'Permissions' => Permissions::class,
     ])->toArray(),
 
 ];

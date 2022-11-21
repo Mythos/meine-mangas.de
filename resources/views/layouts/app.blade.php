@@ -45,7 +45,7 @@
                                         {{ __('Administration') }}
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end">
-                                        @can(\App\Constants\Permissions::PAGES_EDIT)
+                                        @can(Permissions::PAGES_EDIT)
                                             <li>
                                                 <a class="dropdown-item" href="{{ route('pages.index') }}">
                                                     {{ __('Pages') }}

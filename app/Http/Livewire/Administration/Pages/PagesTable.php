@@ -59,7 +59,7 @@ class PagesTable extends BaseComponent
         $this->resetOrder($page->position);
     }
 
-    public function resetOrder(int $position): void
+    private function resetOrder(int $position): void
     {
         $pages = Page::wherePosition($position)->orderBy('order')->get();
         $order = 1;

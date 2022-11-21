@@ -89,8 +89,8 @@
                     <div class="col-md-12">
                         <label for="user.secondary_title_preference" class="col-form-label required">{{ __('Original Title Format') }}</label>
                         <select id="user.secondary_title_preference" name="user.secondary_title_preference" class="form-select @error('user.secondary_title_preference') is-invalid @enderror" wire:model.debounce.500ms='user.secondary_title_preference' required>
-                            <option value="{{ App\Enums\SecondaryTitlePreference::ORIGINAL->value }}">{{ __('Original Title') }}</option>
-                            <option value="{{ App\Enums\SecondaryTitlePreference::ROMAJI->value }}">{{ __('Romaji') }}</option>
+                            <option value="{{ SecondaryTitlePreference::ORIGINAL->value }}">{{ __('Original Title') }}</option>
+                            <option value="{{ SecondaryTitlePreference::ROMAJI->value }}">{{ __('Romaji') }}</option>
                         </select>
                         @error('user.secondary_title_preference')
                             <span class="invalid-feedback" role="alert">

@@ -32,9 +32,9 @@
                     <div class="col-md-12">
                         <label for="page.position" class="col-form-label">{{ __('Position') }}</label>
                         <select id="page.position" name="page.position" class="form-select @error('page.position') is-invalid @enderror" wire:model.debounce.500ms='page.position'>
-                            <option value="{{ App\Enums\PagePosition::NONE->value }}">{{ __('None') }}</option>
-                            <option value="{{ App\Enums\PagePosition::FOOTER_LEFT->value }}">{{ __('Footer (left)') }}</option>
-                            <option value="{{ App\Enums\PagePosition::FOOTER_RIGHT->value }}">{{ __('Footer (right)') }}</option>
+                            <option value="{{ PagePosition::NONE->value }}">{{ __('None') }}</option>
+                            <option value="{{ PagePosition::FOOTER_LEFT->value }}">{{ __('Footer (left)') }}</option>
+                            <option value="{{ PagePosition::FOOTER_RIGHT->value }}">{{ __('Footer (right)') }}</option>
                         </select>
                         @error('page.position')
                             <span class="invalid-feedback" role="alert">
@@ -44,14 +44,14 @@
                     </div>
                 </div>
                 <div class="mt-3">
-                    @can(\App\Constants\Permissions::PAGES_DELETE)
+                    @can(Permissions::PAGES_DELETE)
                         @if ($page->id > 0)
                             <div class="float-start mb-3">
                                 <button type="button" class="btn btn-danger" wire:click='delete'>{{ __('Delete') }}</button>
                             </div>
                         @endif
                     @endcan
-                    @can(\App\Constants\Permissions::PAGES_EDIT)
+                    @can(Permissions::PAGES_EDIT)
                         <div class="float-end mb-3">
                             <button class="btn btn-primary" type="submit">{{ __('Save') }}</button>
                         </div>

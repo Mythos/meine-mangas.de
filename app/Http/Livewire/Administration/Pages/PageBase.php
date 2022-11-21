@@ -39,7 +39,12 @@ class PageBase extends BaseComponent
             if ($this->page->position != $this->page->getOriginal('position')) {
                 $this->page->order = (Page::wherePosition($this->page->position)->max('order') ?? 0) + 1;
             }
+            $originalPosition = $this->page->getOriginal('position');
             $this->page->save();
+            if ($originalPosition != $this->page->position) {
+                $this->resetOrder($originalPosition);
+                $this->resetOrder($this->page->position);
+            }
 
             return redirect()->route('pages.index');
         } catch (Exception $exception) {
@@ -68,5 +73,16 @@ class PageBase extends BaseComponent
         }
         $this->page->delete();
         redirect()->route('pages.index');
+    }
+
+    private function resetOrder(int $position): void
+    {
+        $pages = Page::wherePosition($position)->orderBy('order')->get();
+        $order = 1;
+        foreach ($pages as $page) {
+            $page->order = $order;
+            $page->save();
+            $order++;
+        }
     }
 }
