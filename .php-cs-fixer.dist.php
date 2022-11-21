@@ -51,6 +51,9 @@ return (new PhpCsFixer\Config)
             'spacing' => 'one',
         ],
         'constant_case' => ['case' => 'lower'],
+        'curly_braces_position' => [
+            'anonymous_classes_opening_brace' => 'next_line_unless_newline_at_signature_end',
+        ],
         'declare_equal_normalize' => true,
         'elseif' => true,
         'encoding' => true,
