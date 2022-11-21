@@ -5,8 +5,8 @@
 @slot('breadcrumbs')
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('profile') }}">{{ __('Profile') }}</a></li>
-        <li class="breadcrumb-item active">{{ __('Change password') }}</li>
+        <li class="breadcrumb-item"><a href="{{ route('profile') }}">{{ __('My Profile') }}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ __('Change password') }}</li>
     </ol>
 @endslot
 

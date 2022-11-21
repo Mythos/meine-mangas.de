@@ -1,12 +1,12 @@
-@section('title')
+@slot('title')
     {{ __('Home') }}
-@endsection
+@endslot
 
-@section('breadcrumbs')
+@slot('breadcrumbs')
     <ol class="breadcrumb">
-        <li class="breadcrumb-item active">{{ __('Home') }}</li>
+        <li class="breadcrumb-item active" aria-current="page">{{ __('Home') }}</li>
     </ol>
-@endsection
+@endslot
 
 <div class="row mb-3">
 </div>

@@ -1,11 +1,11 @@
 @slot('title')
-    {{ __('Profile') }}
+    {{ __('My Profile') }}
 @endslot
 
 @slot('breadcrumbs')
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
-        <li class="breadcrumb-item active">{{ __('Profile') }}</li>
+        <li class="breadcrumb-item active" aria-current="page">{{ __('My Profile') }}</li>
     </ol>
 @endslot
 
@@ -22,7 +22,7 @@
         <div class="col-md-9">
             <div class="p-3 py-3">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right">{{ __('Profile') }}</h4>
+                    <h4 class="text-right">{{ __('My Profile') }}</h4>
                     <a class="btn btn-secondary" href="{{ route('change-password') }}">{{ __('Change password') }}</a>
                 </div>
                 <div class="row mt-1">

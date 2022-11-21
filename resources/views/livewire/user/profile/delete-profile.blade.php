@@ -1,11 +1,12 @@
 @slot('title')
-    {{ __('Profile') }}
+    {{ __('Delete Profile') }}
 @endslot
 
 @slot('breadcrumbs')
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
-        <li class="breadcrumb-item active">{{ __('Profile') }}</li>
+        <li class="breadcrumb-item"><a href="{{ route('profile') }}">{{ __('My Profile') }}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ __('Delete Profile') }}</li>
     </ol>
 @endslot
 

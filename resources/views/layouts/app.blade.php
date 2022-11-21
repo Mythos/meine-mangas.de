@@ -8,15 +8,15 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    @isset($title)
-        <title>
+    <title>
+        @isset($title)
             {{ $title }} - {{ config('app.name', 'Laravel') }}
-        </title>
-    @else
-        <title>
-            {{ config('app.name', 'Laravel') }}
-        </title>
-    @endisset
+        @else
+            @hasSection('title')
+                @yield('title') -
+            @endif {{ config('app.name', 'Laravel') }}
+        @endisset
+    </title>
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
@@ -80,7 +80,7 @@
                                     {{ Auth::user()->name }}
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end">
-                                    <li><a class="dropdown-item" href="{{ route('profile') }}">{{ __('Profile') }}</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('profile') }}">{{ __('My Profile') }}</a></li>
                                     <li><a class="dropdown-item" href="{{ route('change-password') }}">{{ __('Change password') }}</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
@@ -99,12 +99,12 @@
         </nav>
         <main class="pb-4" style="padding-top: 70px; background-color: #F0F0F0; min-height: 90vh;">
             <div class="container">
-                {{ $breadcrumbs ?? '' }}
-                @hasSection('breadcrumbs')
-                    <nav aria-label="breadcrumb">
+                <nav aria-label="breadcrumb">
+                    {{ $breadcrumbs ?? '' }}
+                    @hasSection('breadcrumbs')
                         @yield('breadcrumbs')
-                    </nav>
-                @endif
+                    @endif
+                </nav>
                 @hasSection('content')
                     @yield('content')
                 @else
